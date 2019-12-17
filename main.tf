@@ -7,7 +7,7 @@ module "kms_key" {
 }
 
   
-}
+
 
 module "secret-manager" {
   source = "./modules/secret-manager"
