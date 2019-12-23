@@ -6,7 +6,7 @@ variable "kms_key_id" {
 variable "name" {
   type        = string
   description = "Name of the secret to be stored"
-  default     = "aws-secrets-rds"
+  default     = "aws-secrets-rds-mysql"
 }
 
 variable "version_stages" {

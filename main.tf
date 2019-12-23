@@ -1,8 +1,8 @@
 module "kms_key" {
   source = "./modules/kms_key"
-  namespace               = "myspace"
-  stage                   = "dev"
-  name                    = "rds-mysql-key"
+  # namespace               = "myspace"
+  # stage                   = "dev"
+  # name                    = "rds-mysql-key"
   deletion_window_in_days = "10"
 }
 
@@ -11,9 +11,9 @@ module "kms_key" {
 
 module "secret-manager" {
   source = "./modules/secret-manager"
-  namespace            = "myspace"
-  stage                = "dev"
-  name                 = "Mysql_Password"
+  # namespace            = "myspace"
+  # stage                = "dev"
+  name                 = "mysql-0"
   secret-string         = {
     username             = "demo"
     password             = "fakepassword"
@@ -24,3 +24,11 @@ module "secret-manager" {
   }
   kms_key_id             = module.kms_key.key_id
 }
+
+module "iam" {
+  source = "./modules/iam"
+  
+  
+}
+
+
