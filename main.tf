@@ -9,21 +9,21 @@ module "kms_key" {
   
 
 
-module "secret-manager" {
-  source = "./modules/secret-manager"
-  # namespace            = "myspace"
-  # stage                = "dev"
-  name                 = "mysql-0"
-  secret-string         = {
-    username             = "demo"
-    password             = "fakepassword"
-    engine               = "mysql"
-    host                 = "wordpress-db.ci6ifuaz6osi.eu-central-1.rds.amazonaws.com"
-    port                 = "3306"
-    dbInstanceIdentifier = "wordpress-db"
-  }
-  kms_key_id             = module.kms_key.key_id
-}
+# module "secret-manager" {
+#   source = "./modules/secret-manager"
+#   # namespace            = "myspace"
+#   # stage                = "dev"
+#   name                 = "mysql-0"
+#   secret-string         = {
+#     username             = "demo"
+#     password             = "fakepassword"
+#     engine               = "mysql"
+#     host                 = "wordpress-db.ci6ifuaz6osi.eu-central-1.rds.amazonaws.com"
+#     port                 = "3306"
+#     dbInstanceIdentifier = "wordpress-db"
+#   }
+#   kms_key_id             = module.kms_key.key_id
+# }
 
 module "iam" {
   source = "./modules/iam"

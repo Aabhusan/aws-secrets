@@ -42,3 +42,9 @@ resource "aws_iam_instance_profile" "test_profile" {
 
 #use this aws_iam_instance_profile in the ec2 using arguments iam_instance_profile:
 
+
+
+
+
+
+
